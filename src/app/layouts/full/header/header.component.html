@@ -1,4 +1,4 @@
-<mat-toolbar class="topbar gap-10">
+<mat-toolbar class="topbar">
 
   <!-- Mobile Menu -->
   
@@ -20,10 +20,10 @@
     target="_blank" class="d-flex justify-content-center bg-success">
     Check Pro Template
   </a> -->
-  <button mat-icon-button aria-label="theme">
-    <i-tabler class="d-flex" name="moon"></i-tabler>
+  <button mat-mini-fab aria-label="theme" class="m-r-5 icon-35 bg-light-warning text-warning-black">
+    <i-tabler class="d-flex" name="sun"></i-tabler>
   </button>
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Notifications">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Notifications" class="m-r-5">
     <i-tabler class="d-flex" name="bell" matBadge="1" matBadgeColor="primary"></i-tabler>
   </button>
   <button mat-mini-fab [matMenuTriggerFor]="profilemenu" aria-label="Notifications">

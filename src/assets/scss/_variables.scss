@@ -6,9 +6,9 @@ $font-family: "Plus Jakarta Sans", sans-serif;
 // light color variable
 
 // Sidenav
-$sidenav-desktop: 270px !default;
-$sidenav-mini: 80px !default;
-$header-height: 64px !default;
+$sidenav-desktop: 250px !default;
+$sidenav-mini: 70px !default;
+$header-height: 60px !default;
 
 //BorderColor
 $borderColor: var(--mat-sys-outline-variant);
@@ -28,12 +28,15 @@ $light-primary: var(--mat-sys-primary-fixed-dim);
 $light-secondary: var(--mat-sys-secondary-fixed-dim);
 $light-accent: var(--mat-sys-secondary-fixed-dim);
 $light-error: var(--mat-sys-error-fixed-dim);
-$light-warning: #ffad1f40;
+$light-warning: rgb(255 204 133 / 24%);
 $light-success: #13deb940;
 $dark: #223742;
 
+
+$warning-black: #e5780b;
+
 // layout
-$boxedWidth: 85%;
+$boxedWidth: 100vw;
 $border-radius: 7px;
 
 $card-spacer: 24px;
