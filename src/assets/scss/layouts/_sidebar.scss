@@ -28,7 +28,7 @@
 
     .menu-list-item {
       height: 45px;
-      padding: 8px 10px !important;
+      padding: 4px 6px !important;
       margin-bottom: 2px;
 
       &:before,
@@ -96,7 +96,7 @@
 }
 
 .mat-drawer.sidebarNav {
-  width: 270px;
+  width: 250px;
   flex-shrink: 0;
   transition: swift-ease-out(width);
   position: absolute;
@@ -110,7 +110,7 @@
 }
 
 .sidebarNav-mini .sidebarNav {
-  width: 80px
+  width: 70px
 }
 
 .sidebarNav-mini .sidebarNav .profile-bar {
@@ -131,7 +131,7 @@
 }
 
 .sidebarNav-mini .sidebarNav:hover {
-  width: 270px
+  width: 250px
 }
 
 .sidebarNav-mini .sidebarNav:hover .profile-bar {
@@ -185,78 +185,4 @@
   .sidebarNav-mini .contentWrapper {
       margin-left:80px!important
   }
-}
-
-.sidebar-list.mdc-list {
-  padding: 0 24px
-}
-
-.sidebar-list.mdc-list .mdc-list-group__subheader {
-  margin: 24px 0 12px;
-  text-transform: uppercase;
-  font-size: .75rem;
-  font-weight: 700
-}
-
-.sidebar-list.mdc-list .menu-list-item {
-  height: 45px;
-  padding: 8px 10px!important;
-  margin-bottom: 2px
-}
-
-.sidebar-list.mdc-list .menu-list-item.twoline {
-  height: 60px;
-  align-items: center
-}
-
-.sidebar-list.mdc-list .menu-list-item:before,.sidebar-list.mdc-list .menu-list-item:focus {
-  z-index: -1
-}
-
-.sidebar-list.mdc-list .menu-list-item.disabled {
-  opacity: .38
-}
-
-.sidebar-list.mdc-list .menu-list-item .item-chip {
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px
-}
-
-.sidebar-list.mdc-list .menu-list-item.activeMenu {
-  background-color: var(--mat-sys-primary)
-}
-
-.sidebar-list.mdc-list .menu-list-item.activeMenu .mdc-list-item__primary-text,.sidebar-list.mdc-list .menu-list-item.activeMenu .mat-mdc-list-item-icon {
-  color: #fff!important
-}
-
-.sidebar-list.mdc-list .menu-list-item .mdc-list-item__start {
-  margin-right: 14px;
-  margin-left: 0!important;
-  width: 20px;
-  height: 20px;
-  line-height: 0px;
-  fill: transparent!important
-}
-
-.sidebar-list.mdc-list .menu-list-item .mdc-list-item__primary-text {
-  display: flex;
-  align-items: center;
-  justify-content: space-between
-}
-
-.sidebar-list.mdc-list .menu-list-item .mdc-list-item__primary-text .arrow-icon {
-  display: flex
-}
-
-.sidebar-list.mdc-list .menu-list-item .mdc-list-item__primary-text .arrow-icon .mat-icon {
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center
 }
