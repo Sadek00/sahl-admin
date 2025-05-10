@@ -1,6 +1,5 @@
-
 <!-- <app-topstrip></app-topstrip> -->
-<mat-sidenav-container class="mainWrapper blue_theme light-theme" autosize autoFocus dir="ltr">
+<mat-sidenav-container class="mainWrapper blue_theme" [class.light-theme]="!isDarkTheme()" [class.dark-theme]="isDarkTheme()" autosize autoFocus dir="ltr">
   <!-- ============================================================== -->
   <!-- Vertical Sidebar -->
   <!-- ============================================================== -->

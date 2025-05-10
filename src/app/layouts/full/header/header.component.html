@@ -24,7 +24,7 @@
     aria-label="theme" 
     (click)="toggleTheme()" 
     class="m-r-5 icon-35"
-    [ngClass]="isDarkTheme() ? 'bg-dark text-light' : 'bg-light-warning text-warning-black'">
+    [ngClass]="isDarkTheme() ? 'bg-dark text-primary' : 'bg-light-warning text-warning-black'">
     <i-tabler class="d-flex" [name]="isDarkTheme() ? 'moon' : 'sun'"></i-tabler>
   </button>
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Notifications" class="m-r-5">
