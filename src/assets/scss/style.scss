@@ -22,3 +22,22 @@
 // pages
 @use "pages/auth";
 @import "pages/dashboards";
+
+// Custom snackbar styles
+.error-snackbar {
+  background: #f44336;
+  color: white;
+  
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.success-snackbar {
+  background: #4caf50;
+  color: white;
+  
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
