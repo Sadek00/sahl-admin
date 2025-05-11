@@ -19,12 +19,6 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-// Core Module
-import { CoreModule } from './core/core.module';
-
-// Shared Module
-import { SharedModule } from './shared/shared.module';
-
 // icons
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
@@ -54,8 +48,6 @@ export const appConfig: ApplicationConfig = {
       FormsModule,
       ReactiveFormsModule,
       MaterialModule,
-      CoreModule,
-      SharedModule,
       TablerIconsModule.pick(TablerIcons),
       NgScrollbarModule,
     ),

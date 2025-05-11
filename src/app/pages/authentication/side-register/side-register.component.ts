@@ -1,51 +1,33 @@
 import { Component } from '@angular/core';
+import { CoreService } from 'src/app/services/core.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
-import { first } from 'rxjs/operators';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
 
 @Component({
   selector: 'app-side-register',
+  imports: [RouterModule, MaterialModule, FormsModule, ReactiveFormsModule],
   templateUrl: './side-register.component.html',
 })
 export class AppSideRegisterComponent {
-  form = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-  });
-  error = '';
-  loading = false;
+  options = this.settings.getOptions();
 
-  constructor(
-    private router: Router,
-    private authService: AuthService
-  ) {}
+  constructor(private settings: CoreService, private router: Router) {}
+
+  form = new FormGroup({
+    uname: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
 
   get f() {
     return this.form.controls;
   }
 
   submit() {
-    if (this.form.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.authService.register(
-      this.f.username.value!,
-      this.f.email.value!,
-      this.f.password.value!
-    )
-    .pipe(first())
-    .subscribe({
-      next: () => {
-        this.router.navigate(['/authentication/login']);
-      },
-      error: error => {
-        this.error = error.message || 'Registration failed';
-        this.loading = false;
-      }
-    });
+    // console.log(this.form.value);
+    this.router.navigate(['/']);
   }
 }
