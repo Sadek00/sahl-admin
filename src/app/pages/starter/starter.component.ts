@@ -1,11 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MaterialModule } from '../../material.module';
-import { AppSalesOverviewComponent } from 'src/app/components/sales-overview/sales-overview.component';
-import { AppYearlyBreakupComponent } from 'src/app/components/yearly-breakup/yearly-breakup.component';
-import { AppMonthlyEarningsComponent } from 'src/app/components/monthly-earnings/monthly-earnings.component';
-import { AppRecentTransactionsComponent } from 'src/app/components/recent-transactions/recent-transactions.component';
-import { AppProductPerformanceComponent } from 'src/app/components/product-performance/product-performance.component';
-import { AppBlogCardsComponent } from 'src/app/components/blog-card/blog-card.component';
+import { AppBlogCardsComponent } from 'src/app/shared/components/blog-card/blog-card.component';
+import { AppSalesOverviewComponent } from 'src/app/shared/components/sales-overview/sales-overview.component';
+import { AppYearlyBreakupComponent } from 'src/app/shared/components/yearly-breakup/yearly-breakup.component';
+import { AppMonthlyEarningsComponent } from 'src/app/shared/components/monthly-earnings/monthly-earnings.component';
+import { AppRecentTransactionsComponent } from 'src/app/shared/components/recent-transactions/recent-transactions.component';
+import { AppProductPerformanceComponent } from 'src/app/shared/components/product-performance/product-performance.component';
+
 
 
 @Component({

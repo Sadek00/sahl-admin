@@ -7,7 +7,7 @@ export const routes: Routes = [
   {
     path: '',
     component: FullComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
     children: [
       {
         path: '',
@@ -25,11 +25,15 @@ export const routes: Routes = [
           import('./pages/ui-components/ui-components.routes').then(
             (m) => m.UiComponentsRoutes
           ),
-      },
-      {
+      },      {
         path: 'extra',
         loadChildren: () =>
           import('./pages/extra/extra.routes').then((m) => m.ExtraRoutes),
+      },
+      {
+        path: 'features',
+        loadChildren: () =>
+          import('./features/features.routes').then((m) => m.FEATURES_ROUTES),
       },
     ],
   },
