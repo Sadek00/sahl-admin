@@ -22,8 +22,7 @@ export class ErrorService {
     this.showError(errorMessage);
     console.error('Error:', error);
   }
-
-  private showError(message: string) {
+  showError(message: string) {
     this.snackBar.open(message, 'Close', {
       duration: 5000,
       horizontalPosition: 'end',
