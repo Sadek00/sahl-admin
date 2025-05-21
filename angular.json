@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Modernize": {
+    "Sahl": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -59,13 +59,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Modernize:build:production"
+              "buildTarget": "Sahl:build:production"
             },
             "hmr": {
               "hmr": true
             },
             "development": {
-              "buildTarget": "Modernize:build:development"
+              "buildTarget": "Sahl:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Modernize:build"
+            "buildTarget": "Sahl:build"
           }
         },
         "test": {

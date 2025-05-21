@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { FullComponent } from './layouts/full/full.component';
 import { authGuard } from './core/guards/auth.guard';
+import { RoleGuard } from './core/guards/role.guard';
 
-export const routes: Routes = [
-  {
+export const routes: Routes = [  {
     path: '',
     component: FullComponent,
     //canActivate: [authGuard],
@@ -13,11 +13,12 @@ export const routes: Routes = [
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full',
-      },
-      {
+      },      {
         path: 'dashboard',
         loadChildren: () =>
           import('./pages/pages.routes').then((m) => m.PagesRoutes),
+       // canActivate: [authGuard],
+        //data: { roles: ['admin', 'user'] }
       },
       {
         path: 'ui-components',
