@@ -3,6 +3,7 @@ import { BlankComponent } from './layouts/blank/blank.component';
 import { FullComponent } from './layouts/full/full.component';
 import { authGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
+import { RolepermissionsComponent } from './features/rolemanagement/rolepermissions/rolepermissions.component';
 
 export const routes: Routes = [  {
     path: '',
@@ -35,6 +36,10 @@ export const routes: Routes = [  {
         path: 'features',
         loadChildren: () =>
           import('./features/features.routes').then((m) => m.FEATURES_ROUTES),
+      },
+      {
+        path: 'rolepermissions',
+        component: RolepermissionsComponent
       },
     ],
   },
