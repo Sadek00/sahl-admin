@@ -1,9 +1,44 @@
 <!-- ============================================================== -->
 <!-- Simple four boxes Row -->
 <!-- ============================================================== -->
-<mat-card class="cardWithShadow">
-  <mat-card-content>
-    <mat-card-title>Sample Page</mat-card-title>
-    <mat-card-subtitle>This is test page</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+<!--Sticky Header-->
+<div class="sticky-header">
+    <div class="title-section">
+        <div class="title-content">
+            <h2>Sample Page</h2>
+            <nav class="breadcrumbs">
+                <a href="#" class="breadcrumb-item">Home</a>
+                <span class="breadcrumb-separator">•</span>
+                <span class="breadcrumb-item active">Sample page</span>
+            </nav>
+        </div>       
+        <div class="header-actions">
+            <button mat-stroked-button [matMenuTriggerFor]="menu">
+                More
+            <mat-icon>expand_more</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>file_download</mat-icon>
+                Export
+            </button>
+            <button mat-menu-item>
+                <mat-icon>print</mat-icon>
+                Print
+            </button>
+            </mat-menu>
+            <button mat-flat-button color="primary">
+            <mat-icon>add</mat-icon>
+                Add Page
+            </button>            
+        </div>
+    </div>
+</div>
+<div class="pageWrapper">
+  <mat-card class="cardWithShadow">
+    <mat-card-content>
+      <mat-card-title>Sample Page</mat-card-title>
+      <mat-card-subtitle>This is test page</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -19,6 +19,9 @@
 @use "helpers/custom-flex";
 @use "helpers";
 
+// components
+@use "component/header";
+
 // pages
 @use "pages/auth";
 @import "pages/dashboards";

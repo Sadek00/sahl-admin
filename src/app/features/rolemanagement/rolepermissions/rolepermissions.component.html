@@ -1,17 +1,19 @@
-<div class="role-permissions-container">  <!-- Header Section -->
-  <div class="header-section">
+<!--Sticky Header-->
+<div class="sticky-header">
     <div class="title-section">
         <div class="title-content">
             <h2>Roles Permission</h2>
-            <p class="subtitle">Here you can manage roles permission.</p>
+            <nav class="breadcrumbs">
+                <a href="#" class="breadcrumb-item">E-Commerce</a>
+                <span class="breadcrumb-separator">•</span>
+                <a href="#" class="breadcrumb-item">Products</a>
+                <span class="breadcrumb-separator">•</span>
+                <span class="breadcrumb-item active">List</span>
+            </nav>
         </div>       
         <div class="header-actions">
-            <button mat-flat-button color="primary">
-            <mat-icon>add</mat-icon>
-            Add Permission
-            </button>
             <button mat-stroked-button [matMenuTriggerFor]="menu">
-            More Actions
+                More
             <mat-icon>expand_more</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
@@ -24,185 +26,21 @@
                 Print
             </button>
             </mat-menu>
+            <button mat-flat-button color="primary">
+            <mat-icon>add</mat-icon>
+                Add Permission
+            </button>            
         </div>
     </div>
-  </div>
-    <div class="role-name">
-        <mat-form-field appearance="outline">
-        <mat-label>Role Name</mat-label>
-        <input matInput placeholder="Cashier">
-        </mat-form-field>
-    </div>
-  <!-- Permissions Grid -->
-  <div class="permissions-grid">
-    <!-- USER Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">USER</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View User</mat-checkbox>
-        <mat-checkbox>Edit User</mat-checkbox>
-        <mat-checkbox>Reset User Password</mat-checkbox>
-        <mat-checkbox>Create User</mat-checkbox>
-        <mat-checkbox>Delete User</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- ROLE Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">ROLE</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Role</mat-checkbox>
-        <mat-checkbox>Edit Role</mat-checkbox>
-        <mat-checkbox>Create Role</mat-checkbox>
-        <mat-checkbox>Delete Role</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- REPORTS Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">REPORTS</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View All Cash Reports</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- PHARMACY PRODUCT Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">PHARMACY PRODUCT</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Product</mat-checkbox>
-        <mat-checkbox>Edit Product</mat-checkbox>
-        <mat-checkbox>Create Product</mat-checkbox>
-        <mat-checkbox>Delete Product</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- PATIENT Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">PATIENT</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Patient</mat-checkbox>
-        <mat-checkbox>Edit Patient</mat-checkbox>
-        <mat-checkbox>Create Patient</mat-checkbox>
-        <mat-checkbox>Delete Patient</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- OTHER SERVICE Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">OTHER SERVICE</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Service</mat-checkbox>
-        <mat-checkbox>Edit Service</mat-checkbox>
-        <mat-checkbox>Create Service</mat-checkbox>
-        <mat-checkbox>Delete Service</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- LAB REPORT Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">LAB REPORT</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Lab Report</mat-checkbox>
-        <mat-checkbox>Edit Lab Report</mat-checkbox>
-        <mat-checkbox>Create Lab Report</mat-checkbox>
-        <mat-checkbox>Delete Lab Report</mat-checkbox>
-        <!-- Additional Lab Report permissions -->
-        <mat-checkbox>Edit Unit</mat-checkbox>
-        <mat-checkbox>Delete Unit</mat-checkbox>
-        <mat-checkbox>View Result Category</mat-checkbox>
-        <mat-checkbox>Edit Result Category</mat-checkbox>
-        <mat-checkbox>Create Result Category</mat-checkbox>
-        <mat-checkbox>Delete Result Category</mat-checkbox>
-        <mat-checkbox>View Test Data</mat-checkbox>
-        <mat-checkbox>Edit Test Data</mat-checkbox>
-        <mat-checkbox>Create Test Data</mat-checkbox>
-        <mat-checkbox>Delete Test Data</mat-checkbox>
-        <mat-checkbox>View Test Data Category</mat-checkbox>
-        <mat-checkbox>Edit Test Data Category</mat-checkbox>
-        <mat-checkbox>Create Test Data Category</mat-checkbox>
-        <mat-checkbox>Delete Test Data Category</mat-checkbox>
-        <mat-checkbox>View Patient Lab Report</mat-checkbox>
-        <mat-checkbox>Print Patient Lab Report</mat-checkbox>
-        <mat-checkbox>Update Patient Lab Report</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- INVOICE Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">INVOICE</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>Create Invoice</mat-checkbox>
-        <mat-checkbox>Reverse Invoice</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- DOCTOR Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">DOCTOR</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Doctor</mat-checkbox>
-        <mat-checkbox>Edit Doctor</mat-checkbox>
-        <mat-checkbox>Create Doctor</mat-checkbox>
-        <mat-checkbox>Delete Doctor</mat-checkbox>
-      </div>
-    </div>
-
-    <!-- CHANNEL SESSION Permissions -->
-    <div class="permission-section">
-      <div class="section-header">
-        <span class="section-title">CHANNEL SESSION</span>
-        <span class="section-subtitle">Permission</span>
-        <mat-checkbox>Select All</mat-checkbox>
-      </div>
-      <div class="permission-items">
-        <mat-checkbox>View Session</mat-checkbox>
-        <mat-checkbox>Edit Session</mat-checkbox>
-        <mat-checkbox>Create Session</mat-checkbox>
-        <mat-checkbox>Delete Session</mat-checkbox>
-      </div>
-    </div>
-  </div>
-
-  <!-- Action Buttons -->
-  <div class="action-buttons">
-    <button mat-button>Close</button>
-    <button mat-raised-button color="primary">Update Role</button>
-  </div>
+</div>
+<!-- Content Section -->
+<div class="pageWrapper">
+    <mat-form-field class="select-md" appearance="outline">
+        <mat-label>Select Role</mat-label>
+        <mat-select>
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="cashier">Cashier</mat-option>
+            <mat-option value="manager">Manager</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
