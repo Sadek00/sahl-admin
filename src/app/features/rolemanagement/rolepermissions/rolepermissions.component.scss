@@ -1,7 +1,9 @@
 .select-md {
   width: 100%;
-  max-width: 300px;
-  margin-top: 2px;
+  max-width: 400px;
+}
+.mt-4{
+  margin-top: 1rem !important;
 }
 
 // Media query mixins
@@ -34,18 +36,12 @@
   }
 
   .header-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--card-header-linear);
     color: white;
     position: relative;
 
-    // Dark theme adjustments
-    html.dark-theme & {
-      background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-      box-shadow: var(--mat-sys-level1);
-    }
-
     .header-content {
-      padding: 1.5rem;
+      padding: 13px;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -53,7 +49,7 @@
       flex-wrap: wrap;
 
       @include for-phone-only {
-        padding: 1rem;
+        padding: 10px;
         gap: 0.5rem;
       }
 
@@ -74,11 +70,6 @@
           background: rgba(255, 255, 255, 0.2);
           border-radius: 0.5rem;
           backdrop-filter: blur(10px);
-
-          html.dark-theme & {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-          }
 
           .header-icon {
             font-size: 1.5rem;
@@ -119,7 +110,7 @@
         box-shadow: none;
         padding: 0;
 
-        .select-all-checkbox {
+        .select-all-checkbox {          
           .select-all-label {
             font-weight: 500;
             color: #fff;
@@ -152,15 +143,7 @@
       background: rgba(255, 255, 255, 0.2);
 
       ::ng-deep .mat-progress-bar-fill::after {
-        background: linear-gradient(90deg, #667eea, #764ba2);
-      }
-
-      html.dark-theme & {
-        background: rgba(255, 255, 255, 0.1);
-        
-        ::ng-deep .mat-progress-bar-fill::after {
-          background: linear-gradient(90deg, #4299e1, #667eea);
-        }
+        background: var(--card-header-linear);
       }
     }
   }
@@ -168,7 +151,7 @@
   .content-section {
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    padding: 6px 22px;
+    padding: 6px 22px 14px 17px;
 
     @include for-phone-only {
       padding: 6px 12px;
@@ -193,14 +176,10 @@
   .permissions-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
 
     &.two-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-      gap: 0.5rem 1rem;
-      margin-bottom: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
 
       @include for-phone-only {
         grid-template-columns: 1fr;
@@ -210,15 +189,14 @@
     .permission-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 5px;
       cursor: pointer;
       transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-      background: var(--mat-sys-surface-container);
-      padding: 0.5rem;
+      padding: 1px;
       border-radius: 0.5rem;
 
       @include for-phone-only {
-        gap: 0.5rem;
+        gap: 5px;
         flex-wrap: wrap;
       }
 

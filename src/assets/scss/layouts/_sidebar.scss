@@ -6,12 +6,12 @@
   transition: swift-ease-out(width);
   position: absolute;
   overflow-x: hidden;
-  border-right: 1px solid $borderColor;
+  border-right: 1px solid var(--border-color);
   border-radius: 0px !important;
 }
 
 .branding {
-  padding: 20px;
+  padding: 15px 20px;
 }
 
 .sidebar-list {
@@ -24,10 +24,11 @@
       font-size: 0.75rem;
       font-weight: 700;
       margin-top: 24px;
+      color: var(--f-header-primary);
     }
 
     .menu-list-item {
-      height: 45px;
+      height: 40px;
       padding: 4px 6px !important;
       margin-bottom: 2px;
 
@@ -46,7 +47,7 @@
       }
 
       &.activeMenu {
-        background-color: var(--mat-sys-primary);
+        background: var(--primary-linear-gradient);
 
         .mdc-list-item__primary-text {
           color: $white !important;
@@ -103,10 +104,6 @@
   overflow-x: hidden;
   border-right: 1px solid var(--mat-sys-outline-variant);
   border-radius: 0!important
-}
-
-.branding {
-  padding: 20px
 }
 
 .sidebarNav-mini .sidebarNav {
