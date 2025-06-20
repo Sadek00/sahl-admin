@@ -261,3 +261,43 @@
     opacity: 0.5;
   }
 }
+
+
+.component-permissions-list {
+  display: flex;
+  flex-direction: column;
+
+    .permission-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .module-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      
+      .module-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+    .module-details h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .permission-chips {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+}
