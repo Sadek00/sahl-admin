@@ -13,8 +13,8 @@ export class RolepermissionsComponent {
   
   permissions = signal<RolePermission[]>([
     { key: 'dashboard', label: 'Dashboard', icon: 'dashboard', selected: false },
-    { key: 'products', label: 'Products', icon: 'inventory_2', selected: false },
-    { key: 'orders', label: 'Orders', icon: 'receipt_long', selected: false },
+    { key: 'ecommerce', label: 'Ecommerce', icon: 'inventory_2', selected: false },
+    { key: 'hrms', label: 'HRMS', icon: 'receipt_long', selected: false },
     { key: 'customers', label: 'Customers', icon: 'people', selected: false },
     { key: 'reports', label: 'Reports', icon: 'analytics', selected: false },
     { key: 'settings', label: 'Settings', icon: 'settings', selected: false }

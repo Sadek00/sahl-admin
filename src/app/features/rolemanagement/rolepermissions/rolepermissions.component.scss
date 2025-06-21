@@ -2,9 +2,6 @@
   width: 100%;
   max-width: 400px;
 }
-.mt-4{
-  margin-top: 1rem !important;
-}
 
 // Media query mixins
 @mixin for-phone-only {
@@ -33,6 +30,9 @@
     border-radius: 0.5rem;
     margin: 0.5rem;
     width: calc(100% - 1rem);
+  }
+  @include for-tablet-portrait-up {
+    margin-bottom: 12px;
   }
 
   .header-section {
@@ -179,7 +179,7 @@
 
     &.two-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
       @include for-phone-only {
         grid-template-columns: 1fr;
@@ -271,9 +271,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4px;
+      padding: 1px;
+      gap: 10px;
       border-radius: 8px;
       transition: all 0.2s ease;
+      // Responsive: stack vertically on small screens
+      @include for-phone-only {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 8px 0;
+      }
+      // Tablet: keep row direction for title and chips on same line
+      @include for-tablet-portrait-up {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 8px;
+      }
     }
 
     .module-info {
@@ -287,6 +302,13 @@
         width: 1.5rem;
         height: 1.5rem;
       }
+      // Responsive: center on small screens
+      @include for-phone-only {
+        justify-content: flex-start;
+      }
+      @include for-tablet-portrait-up {
+        justify-content: flex-start;
+      }
     }
     
     .module-details h3 {
@@ -299,5 +321,19 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      // Responsive: full width and left align on small screens
+      @include for-phone-only {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      @include for-tablet-portrait-up {
+        width: auto;
+        justify-content: flex-start;
+      }
+      mat-chip-listbox {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
 }
