@@ -5,14 +5,18 @@ import { CoreService } from 'src/app/core/services/core.service';
   selector: 'app-branding',
   imports: [],
   template: `
-    <a href="/" class="logodark">
-      <img
-        src="./assets/images/logos/dark-logo.svg"
-        class="align-middle m-2"
-        alt="logo"
-      />
-    </a>
+    <div class="branding">
+      <a href="/" class="logodark d-flex align-items-center">
+        <img
+          src="./assets/images/logos/logoSahl.png"
+          class="align-middle m-2"
+          alt="logo"
+        />
+        <span>Sahl Admin</span>
+      </a>
+    </div>
   `,
+  styleUrls: ['./branding.component.scss'],
 })
 export class BrandingComponent {
   options = this.settings.getOptions();

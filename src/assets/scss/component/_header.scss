@@ -54,8 +54,6 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: shimmer 3s ease-in-out infinite;
-        transition: color 0.2s, transform 0.2s;
         }
         
       }
@@ -71,11 +69,7 @@
         color: #fff;
         font-weight: 500;
         letter-spacing: 0.2px;
-        cursor: pointer;
-        
-        &:hover {
-          background: var(--card-header-linear);
-        }       
+        cursor: pointer;    
       }
     }
   }  

@@ -9,6 +9,72 @@ export const navItems: NavItem[] = [
     iconName: 'layout-grid-add',
     route: '/dashboard',
   },
+  {
+    navCap: 'Auth',
+  },
+   {
+    displayName: 'Roles & Permissions',
+    iconName: 'lock-access',
+    route: '/rolepermissions',
+    children: [
+      {
+        displayName: 'Permissions',
+        iconName: 'point',
+        route: '/rolepermissions',
+      },
+      // {
+      //   displayName: 'Side Login',
+      //   iconName: 'point',
+      //   external: true,
+      //   chip: true,
+      //   chipClass: 'bg-light-secondary text-secondary', 
+      //   chipContent: 'PRO',
+      //   route: 'https://modernize-angular-main.netlify.app/authentication/login',
+      // },
+    ],
+  },
+  {
+    displayName: 'Login',
+    iconName: 'login',
+    route: '/authentication',
+    children: [
+      {
+        displayName: 'Login',
+        iconName: 'point',
+        route: '/authentication/login',
+      },
+      // {
+      //   displayName: 'Side Login',
+      //   iconName: 'point',
+      //   external: true,
+      //   chip: true,
+      //   chipClass: 'bg-light-secondary text-secondary', 
+      //   chipContent: 'PRO',
+      //   route: 'https://modernize-angular-main.netlify.app/authentication/login',
+      // },
+    ],
+  },
+  {
+    displayName: 'Register',
+    iconName: 'user-plus',
+    route: '/authentication',
+    children: [
+      {
+        displayName: 'Register',
+        iconName: 'point',
+        route: '/authentication/register',
+      },
+      // {
+      //   displayName: 'Side Register',
+      //   iconName: 'point',
+      //   external: true,
+      //   chip: true,
+      //   chipClass: 'bg-light-secondary text-secondary',
+      //   chipContent: 'PRO',
+      //   route: 'https://modernize-angular-main.netlify.app/authentication/side-register',
+      // },
+    ],
+  },
   // {
   //   displayName: 'Analytical',
   //   iconName: 'aperture',
@@ -796,51 +862,6 @@ export const navItems: NavItem[] = [
   //   chipContent: 'PRO',
   // },
 
-  {
-    navCap: 'Auth',
-  },
-  {
-    displayName: 'Login',
-    iconName: 'login',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Login',
-        iconName: 'point',
-        route: '/authentication/login',
-      },
-      // {
-      //   displayName: 'Side Login',
-      //   iconName: 'point',
-      //   external: true,
-      //   chip: true,
-      //   chipClass: 'bg-light-secondary text-secondary', 
-      //   chipContent: 'PRO',
-      //   route: 'https://modernize-angular-main.netlify.app/authentication/login',
-      // },
-    ],
-  },
-  {
-    displayName: 'Register',
-    iconName: 'user-plus',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Register',
-        iconName: 'point',
-        route: '/authentication/register',
-      },
-      // {
-      //   displayName: 'Side Register',
-      //   iconName: 'point',
-      //   external: true,
-      //   chip: true,
-      //   chipClass: 'bg-light-secondary text-secondary',
-      //   chipContent: 'PRO',
-      //   route: 'https://modernize-angular-main.netlify.app/authentication/side-register',
-      // },
-    ],
-  },
   // {
   //   displayName: 'Forgot Pwd',
   //   iconName: 'rotate',
