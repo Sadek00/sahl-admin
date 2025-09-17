@@ -1,0 +1,217 @@
+.sticky {
+  position: sticky;
+}
+.header { 
+  top: 60px;
+  z-index: 9;
+  height: 75px;
+  padding: 13px 24px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  .title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    
+    .page-icon,
+    .title-content {
+      display: flex;
+      align-items: flex-start;
+    }
+
+      .page-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--primary-linear-gradient);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+        flex-shrink: 0;
+
+        .icon-large {
+          color: white;
+          font-size: 24px;
+          width: 24px;
+          height: 24px;
+        }
+      }
+        .title-content {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        gap: 7px;
+        
+        h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: #1a1a1a;
+        background: var(--primary-linear-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        }
+        
+      }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      
+      .add-button {
+        box-shadow: 0 1px 2px rgba(99,102,241,0.08);
+        background: var(--primary-linear-gradient);
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        cursor: pointer;    
+      }
+    }
+  }  
+
+  .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      opacity: 0.93;
+      margin: 0;
+      }
+
+    .breadcrumb-item {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-weight: 500;
+      
+      &:hover {
+        color: #473fdf;
+        background: rgba(99,102,241,0.07);
+      }
+      &.active {
+        color: #6366f1;
+        background: rgba(99,102,241,0.13);
+        font-weight: 700;
+      }
+      &:first-child {
+        padding-left: 2px;
+      }
+      }
+
+      .breadcrumb-separator {
+      color: #bdbdbd;
+      font-size: 13px;
+      user-select: none;
+      }
+}
+
+// Media Queries for Responsive Design
+@media screen and (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 16px;
+    
+    .title-section {
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      
+      .page-icon {
+        width: 32px;
+        height: 32px;
+        margin-top: 2px;
+        
+        .icon-large {
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      
+      .title-content {
+        flex: 1;
+        min-width: 0;
+        margin-top: 0;
+        
+        h2 {
+          font-size: 20px;
+          margin: 0;
+          line-height: 1.2;
+        }
+      }
+      
+      .header-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 12px;
+      }
+    }
+    button {
+      height: 35px;
+    }
+    .breadcrumbs {
+      display: none; // Hide breadcrumbs on mobile
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    height: auto;
+    padding: 20px;
+    
+    .title-section {
+      gap: 15px;
+      flex-wrap: nowrap;
+      align-items: center;
+      
+      .page-icon {
+        width: 36px;
+        height: 36px;
+        
+        .icon-large {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .title-content {
+        flex: 1;
+        min-width: 0;
+        margin-right: 16px;
+        
+        h2 {
+          font-size: 20px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      
+      .header-actions {
+        flex-shrink: 0;
+        margin-top: 0;
+        margin-left: auto;
+        width: auto !important;
+        display: flex;
+        gap: 8px;
+        
+        button {
+          padding: 0 12px;
+          
+          mat-icon {
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkSahl=self.webpackChunkSahl||[]).push([[97],{9097:(d,h,n)=>{n.r(h),n.d(h,{FEATURES_ROUTES:()=>o});const o=[{path:"",children:[{path:"demo",loadComponent:()=>n.e(674).then(n.bind(n,9674)).then(t=>t.DemoComponent)}]}]}}]);

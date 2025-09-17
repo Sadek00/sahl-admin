@@ -1,0 +1,73 @@
+html .light-theme {
+    color-scheme: light;
+    --mat-sys-corner-small: 7px;
+    --mat-sys-background: #ffffff;
+    --mat-sys-surface-bright: #f2f6fa;
+    --mat-sys-surface: #fff;
+    --mat-sys-surface-container: #fff;
+    --mat-sys-surface-container-low: #fff;
+    --mat-sys-on-background: #2a3547;
+    --mat-sys-outline: #d7dde2;
+    --mat-sys-outline-variant: #d7dde2;
+    --mdc-outlined-text-field-hover-outline-color: #d7dde2;
+    --mdc-checkbox-unselected-hover-state-layer-color: #d7dde2;
+    --mat-menu-item-hover-state-layer-color: #f6f9fc;
+    --mat-standard-button-toggle-state-layer-color: #f6f9fc;
+    --mat-option-focus-state-layer-color: #f6f9fc;
+    --mat-option-hover-state-layer-color: #f6f9fc;
+    --mdc-switch-unselected-track-color: #f6f9fc;
+    --mat-stepper-header-focus-state-layer-color: #f6f9fc;
+    --mat-stepper-header-hover-state-layer-color: #f6f9fc;
+    --mdc-dialog-supporting-text-color: var(--mat-sys-on-background);
+    --mat-expansion-header-hover-state-layer-color: #f6f9fc;
+    --border-color: #e5e7eb;
+    --primary-linear-gradient: linear-gradient(135deg, #667eea 0%, #003d9b 100%);
+    --card-header-linear: linear-gradient(135deg, #556bcd 0%, #003d9b 100%);
+    --logo-linear: linear-gradient(135deg, #187872 0%, #684a04 100%);
+    --f-header-primary: #556bcd;
+  }
+  html.dark-theme {
+    color-scheme: dark;
+    --mat-sys-background: #141a21;
+    --mat-sys-on-background: rgba(255, 255, 255, .9);
+    --mat-sys-on-primary: #fff;
+    --mat-sys-surface-bright: #ffffff05;
+    --mat-sys-surface: #141a21;
+    --mat-sys-surface-container: #141a21;
+    --mat-sys-surface-container-low: #141a21;
+    --mat-sys-outline-variant: #2e3f50;
+    --mat-sys-outline: #2e3f50;
+    --mdc-outlined-text-field-hover-outline-color: #465670;
+    --mdc-checkbox-unselected-hover-state-layer-color: #19212a;
+    --mat-menu-item-hover-state-layer-color: #19212a;
+    --mat-standard-button-toggle-state-layer-color: #19212a;
+    --mat-option-focus-state-layer-color: #19212a;
+    --mat-option-hover-state-layer-color: #19212a;
+    --mdc-switch-unselected-track-color: #19212a;
+    --mat-stepper-header-focus-state-layer-color: #19212a;
+    --mat-stepper-header-hover-state-layer-color: #19212a;
+    --mat-expansion-header-hover-state-layer-color: #19212a;
+    --border-color: #2e3f50;
+    --primary-linear-gradient: linear-gradient(135deg, #3e54b5 0%, #003d9b 100%);
+    --card-header-linear: linear-gradient(135deg, #1e2c66cf 0%, #19062a 100%);
+    --logo-linear: linear-gradient(135deg, #187872 0%, #003d9b 100%);
+    --f-header-primary: #fff;
+}
+
+html.dark-theme {
+    --mdc-elevated-card-container-color: #1c252e
+}
+
+html.dark-theme {
+    --mdc-elevated-card-container-elevation: rgba(0, 0, 0, .2) 0px 0px 2px 0px
+}
+
+html.dark-theme {
+    --mat-card-subtitle-text-color: rgba(255, 255, 255, .67)
+}
+
+html.dark-theme {
+    --mat-sys-level1: 0px 12px 24px -4px rgba(143, 176, 210, .02);
+    --mat-sys-level2: 0px 12px 24px -4px rgba(143, 176, 210, .02);
+    --mat-sys-level3: 0px 12px 24px -4px rgba(143, 176, 210, .02)
+}
