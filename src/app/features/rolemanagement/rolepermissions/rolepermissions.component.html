@@ -1,7 +1,6 @@
 <!--Sticky Header-->
-<div class="header sticky">
+<!-- <div class="header sticky">
     <div class="title-section">
-        <!-- Page Icon -->
         <div class="page-icon">
             <mat-icon class="icon-large">shield</mat-icon>
         </div>
@@ -36,359 +35,377 @@
             </button>            
         </div>
     </div>
-</div>
+</div> -->
+<page-header
+  [title]="'Roles Permission'"
+  [icon]="'shield'"
+  [breadcrumbs]="[
+    { label: 'Home', url: '/' },
+    { label: 'Roles', url: '/roles' },
+    { label: 'Permissions', active: true },
+  ]"
+  [sticky]="true"
+  [headerActions]="headerActions"
+>
+</page-header>
+
 <!-- Content Section -->
 <div class="pageWrapper m-t-12">
-    <div class="row">
-        <div class="col-lg-4">
-            <mat-form-field class="select-md" appearance="outline">
-                <mat-label>Select Role</mat-label>
-                <mat-select>
-                    <mat-option value="admin">Admin</mat-option>
-                    <mat-option value="cashier">Cashier</mat-option>
-                    <mat-option value="manager">Manager</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>   
-    <div class="row">
-        <div class="col-lg-4">            
-            <mat-card class="permissions-card">
-                <!-- Header Section -->
-                <div class="header-section">
-                    <div class="header-content">
-                    <div class="header-info">
-                        <div class="icon-container">
-                            <mat-icon class="header-icon">security</mat-icon>
-                        </div>
-                        <div class="header-text">
-                            <h2 class="title">Menu Permissions</h2>
-                            <p class="subtitle">{{ selectedCount() }} of {{ permissions().length }} selected</p>
-                        </div>
-                    </div>
-                    <!-- Move Select All Section to header right -->
-                    <div class="select-all-section header-select-all">
-                        <mat-checkbox
-                        [checked]="allSelected()"
-                        [indeterminate]="someSelected() && !allSelected()"
-                        (change)="toggleSelectAll()"
-                        color="primary"
-                        class="select-all-checkbox"
-                        >
-                        <span class="select-all-label">Select All</span>
-                        </mat-checkbox>
-                    </div>
-                    <button 
-                        mat-icon-button 
-                        class="expand-button"
-                        (click)="toggleExpanded()"
-                        [class.expanded]="isExpanded()"
-                        matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-                    >
-                        <mat-icon>expand_more</mat-icon>
-                    </button>
-                    </div>
-                    
-                    <!-- Progress Bar -->
-                    <mat-progress-bar 
-                    mode="determinate" 
-                    [value]="progressValue()"
-                    class="progress-bar"
-                    ></mat-progress-bar>
-                </div>
-
-                <!-- Content Section -->
-                <div class="content-section" [class.expanded]="isExpanded()">
-                    <mat-card-content class="card-content compact-content">                   
-
-                    <!-- Permissions List -->
-                    <div class="permissions-list two-columns">
-                        @for (permission of permissions(); track permission.key) {
-                        <div 
-                            class="permission-item"
-                            [class.selected]="permission.selected"
-                            (click)="togglePermission(permission.key)"
-                        >
-                            <mat-checkbox
-                            [checked]="permission.selected"
-                            color="primary"
-                            class="permission-checkbox"
-                            (click)="$event.stopPropagation()"
-                            (change)="togglePermission(permission.key)"
-                            >
-                            </mat-checkbox>
-                            <div class="permission-icon-container" [class.selected]="permission.selected">
-                                <mat-icon class="permission-icon">{{ permission.icon }}</mat-icon>
-                            </div>
-                        
-                            <div class="permission-details">
-                                <div class="permission-header">
-                                    <h4 class="permission-title">{{ permission.label }}</h4>
-                                    @if (permission.selected) {                                   
-                                    }
-                                </div>
-                            </div>                          
-                        </div>
-                        }
-                    </div>
-                    </mat-card-content>
-                </div>
-            </mat-card>
-
-        </div>
-        <div class="col-lg-4">
-            <mat-card class="permissions-card">
-                <!-- Header Section -->
-                <div class="header-section">
-                    <div class="header-content">
-                    <div class="header-info">
-                        <div class="icon-container">
-                        <mat-icon class="header-icon">admin_panel_settings</mat-icon>
-                        </div>
-                        <div class="header-text">
-                        <h2 class="title">E-Commerce</h2>
-                        <p class="subtitle">Pages Permission</p>
-                        </div>
-                    </div>
-                    <!-- Move Select All Section to header right -->
-                    <div class="select-all-section header-select-all">
-                        <mat-checkbox
-                        [checked]="allSelected()"
-                        [indeterminate]="someSelected() && !allSelected()"
-                        (change)="toggleSelectAll()"
-                        color="primary"
-                        class="select-all-checkbox"
-                        >
-                        <span class="select-all-label">Select All</span>
-                        </mat-checkbox>
-                    </div>
-                    <button 
-                        mat-icon-button 
-                        class="expand-button"
-                        (click)="toggleExpanded()"
-                        [class.expanded]="isExpanded()"
-                        matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-                    >
-                        <mat-icon>expand_more</mat-icon>
-                    </button>
-                    </div>
-                    
-                    <!-- Progress Bar -->
-                    <!-- <mat-progress-bar 
-                    mode="determinate" 
-                    [value]="progressValue()"
-                    class="progress-bar"
-                    ></mat-progress-bar> -->
-                </div>
-
-                <!-- Content Section -->
-                <div class="content-section" [class.expanded]="isExpanded()">
-                    <mat-card-content class="card-content compact-content">                   
-                        <!-- Permissions List -->
-                        <div class="component-permissions-list">
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">shopping_cart</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Products</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">category</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Category</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">receipt_long</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Orders</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">shopping_basket</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Cart</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                </div>
-            </mat-card>
-        </div>
-        <div class="col-lg-4">
-            <mat-card class="permissions-card">
-                <!-- Header Section -->
-                <div class="header-section">
-                    <div class="header-content">
-                    <div class="header-info">
-                        <div class="icon-container">
-                        <mat-icon class="header-icon">admin_panel_settings</mat-icon>
-                        </div>
-                        <div class="header-text">
-                        <h2 class="title">HRMS</h2>
-                        <p class="subtitle">Pages Permission</p>
-                        </div>
-                    </div>
-                    <!-- Move Select All Section to header right -->
-                    <div class="select-all-section header-select-all">
-                        <mat-checkbox
-                        [checked]="allSelected()"
-                        [indeterminate]="someSelected() && !allSelected()"
-                        (change)="toggleSelectAll()"
-                        color="primary"
-                        class="select-all-checkbox"
-                        >
-                        <span class="select-all-label">Select All</span>
-                        </mat-checkbox>
-                    </div>
-                    <button 
-                        mat-icon-button 
-                        class="expand-button"
-                        (click)="toggleExpanded()"
-                        [class.expanded]="isExpanded()"
-                        matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-                    >
-                        <mat-icon>expand_more</mat-icon>
-                    </button>
-                    </div>
-                    
-                    <!-- Progress Bar -->
-                    <!-- <mat-progress-bar 
-                    mode="determinate" 
-                    [value]="progressValue()"
-                    class="progress-bar"
-                    ></mat-progress-bar> -->
-                </div>
-
-                <!-- Content Section -->
-                <div class="content-section" [class.expanded]="isExpanded()">
-                    <mat-card-content class="card-content compact-content">                   
-                        <!-- Permissions List -->
-                        <div class="component-permissions-list">
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">badge</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Employee</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">business</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Departments</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">schedule</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Shift</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                            <div class="permission-row">
-                                <!-- Left Side - Module Info -->
-                                <div class="module-info">
-                                    <mat-icon class="module-icon">event_busy</mat-icon>
-                                    <div class="module-details">
-                                        <h3>Leave</h3>
-                                    </div>
-                                </div>
-
-                                <!-- Right Side - Permission Chips -->
-                                <div class="permission-chips">
-                                    <mat-chip-listbox aria-label="User Permissions" multiple>
-                                        <mat-chip-option class="f-s-14">View</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Edit</mat-chip-option>
-                                        <mat-chip-option class="f-s-14">Delete</mat-chip-option>
-                                    </mat-chip-listbox>
-                                </div>
-                            </div>
-                        </div>
-                    </mat-card-content>
-                </div>
-            </mat-card>
-        </div>
+  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field class="select-md" appearance="outline">
+        <mat-label>Select Role</mat-label>
+        <mat-select>
+          <mat-option value="admin">Admin</mat-option>
+          <mat-option value="cashier">Cashier</mat-option>
+          <mat-option value="manager">Manager</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <mat-card class="permissions-card">
+        <!-- Header Section -->
+        <div class="header-section">
+          <div class="header-content">
+            <div class="header-info">
+              <div class="icon-container">
+                <mat-icon class="header-icon">security</mat-icon>
+              </div>
+              <div class="header-text">
+                <h2 class="title">Menu Permissions</h2>
+                <p class="subtitle">
+                  {{ selectedCount() }} of {{ permissions().length }} selected
+                </p>
+              </div>
+            </div>
+            <!-- Move Select All Section to header right -->
+            <div class="select-all-section header-select-all">
+              <mat-checkbox
+                [checked]="allSelected()"
+                [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()"
+                color="primary"
+                class="select-all-checkbox"
+              >
+                <span class="select-all-label">Select All</span>
+              </mat-checkbox>
+            </div>
+            <button
+              mat-icon-button
+              class="expand-button"
+              (click)="toggleExpanded()"
+              [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
+            >
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </div>
+
+          <!-- Progress Bar -->
+          <!-- <mat-progress-bar
+            mode="determinate"
+            [value]="progressValue()"
+            class="progress-bar"
+          ></mat-progress-bar> -->
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section" [class.expanded]="isExpanded()">
+          <mat-card-content class="card-content compact-content">
+            <!-- Permissions List -->
+            <div class="permissions-list two-columns">
+              @for (permission of permissions(); track permission.key) {
+                <div
+                  class="permission-item"
+                  [class.selected]="permission.selected"
+                  (click)="togglePermission(permission.key)"
+                >
+                  <mat-checkbox
+                    [checked]="permission.selected"
+                    color="primary"
+                    class="permission-checkbox"
+                    (click)="$event.stopPropagation()"
+                    (change)="togglePermission(permission.key)"
+                  >
+                  </mat-checkbox>
+                  <div
+                    class="permission-icon-container"
+                    [class.selected]="permission.selected"
+                  >
+                    <mat-icon class="permission-icon">{{
+                      permission.icon
+                    }}</mat-icon>
+                  </div>
+
+                  <div class="permission-details">
+                    <div class="permission-header">
+                      <h4 class="permission-title">{{ permission.label }}</h4>
+                      @if (permission.selected) {}
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <mat-card class="permissions-card">
+        <!-- Header Section -->
+        <div class="header-section">
+          <div class="header-content">
+            <div class="header-info">
+              <div class="icon-container">
+                <mat-icon class="header-icon">admin_panel_settings</mat-icon>
+              </div>
+              <div class="header-text">
+                <h2 class="title">E-Commerce</h2>
+                <p class="subtitle">Pages Permission</p>
+              </div>
+            </div>
+            <!-- Move Select All Section to header right -->
+            <div class="select-all-section header-select-all">
+              <mat-checkbox
+                [checked]="allSelected()"
+                [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()"
+                color="primary"
+                class="select-all-checkbox"
+              >
+                <span class="select-all-label">Select All</span>
+              </mat-checkbox>
+            </div>
+            <button
+              mat-icon-button
+              class="expand-button"
+              (click)="toggleExpanded()"
+              [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
+            >
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </div>
+
+          <!-- Progress Bar -->
+          <!-- <mat-progress-bar 
+                    mode="determinate" 
+                    [value]="progressValue()"
+                    class="progress-bar"
+                    ></mat-progress-bar> -->
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section" [class.expanded]="isExpanded()">
+          <mat-card-content class="card-content compact-content">
+            <!-- Permissions List -->
+            <div class="component-permissions-list">
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">shopping_cart</mat-icon>
+                  <div class="module-details">
+                    <h3>Products</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">category</mat-icon>
+                  <div class="module-details">
+                    <h3>Category</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">receipt_long</mat-icon>
+                  <div class="module-details">
+                    <h3>Orders</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">shopping_basket</mat-icon>
+                  <div class="module-details">
+                    <h3>Cart</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <mat-card class="permissions-card">
+        <!-- Header Section -->
+        <div class="header-section">
+          <div class="header-content">
+            <div class="header-info">
+              <div class="icon-container">
+                <mat-icon class="header-icon">admin_panel_settings</mat-icon>
+              </div>
+              <div class="header-text">
+                <h2 class="title">HRMS</h2>
+                <p class="subtitle">Pages Permission</p>
+              </div>
+            </div>
+            <!-- Move Select All Section to header right -->
+            <div class="select-all-section header-select-all">
+              <mat-checkbox
+                [checked]="allSelected()"
+                [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()"
+                color="primary"
+                class="select-all-checkbox"
+              >
+                <span class="select-all-label">Select All</span>
+              </mat-checkbox>
+            </div>
+            <button
+              mat-icon-button
+              class="expand-button"
+              (click)="toggleExpanded()"
+              [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
+            >
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </div>
+
+          <!-- Progress Bar -->
+          <!-- <mat-progress-bar 
+                    mode="determinate" 
+                    [value]="progressValue()"
+                    class="progress-bar"
+                    ></mat-progress-bar> -->
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section" [class.expanded]="isExpanded()">
+          <mat-card-content class="card-content compact-content">
+            <!-- Permissions List -->
+            <div class="component-permissions-list">
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">badge</mat-icon>
+                  <div class="module-details">
+                    <h3>Employee</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">business</mat-icon>
+                  <div class="module-details">
+                    <h3>Departments</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">schedule</mat-icon>
+                  <div class="module-details">
+                    <h3>Shift</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+              <div class="permission-row">
+                <!-- Left Side - Module Info -->
+                <div class="module-info">
+                  <mat-icon class="module-icon">event_busy</mat-icon>
+                  <div class="module-details">
+                    <h3>Leave</h3>
+                  </div>
+                </div>
+
+                <!-- Right Side - Permission Chips -->
+                <div class="permission-chips">
+                  <mat-chip-listbox aria-label="User Permissions" multiple>
+                    <mat-chip-option class="f-s-14">View</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Edit</mat-chip-option>
+                    <mat-chip-option class="f-s-14">Delete</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
 </div>

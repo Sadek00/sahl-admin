@@ -1,0 +1,88 @@
+<div class="header" [class.sticky]="sticky">
+  <div class="title-section">
+    @if (icon) {
+      <div class="page-icon">
+        <mat-icon class="icon-large">{{ icon }}</mat-icon>
+      </div>
+    }
+
+    <div class="title-content">
+      <h2>{{ title }}</h2>
+
+      @if (breadcrumbs.length > 0) {
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          @for (
+            breadcrumb of breadcrumbs;
+            track breadcrumb.label;
+            let last = $last
+          ) {
+            @if (!breadcrumb.active && breadcrumb.url) {
+              <a
+                [href]="breadcrumb.url"
+                class="breadcrumb-item"
+                (click)="onBreadcrumbClick(breadcrumb, $event)"
+              >
+                {{ breadcrumb.label }}
+              </a>
+            } @else {
+              <span
+                class="breadcrumb-item"
+                [class.active]="breadcrumb.active"
+                [attr.aria-current]="breadcrumb.active ? 'page' : null"
+              >
+                {{ breadcrumb.label }}
+              </span>
+            }
+            @if (!last) {
+              <span class="breadcrumb-separator" aria-hidden="true">•</span>
+            }
+          }
+        </nav>
+      }
+    </div>
+
+    <div class="header-actions">
+      @if (customActionsTemplate; as template) {
+        <ng-container [ngTemplateOutlet]="template"></ng-container>
+      } @else {
+        @if (menuActions.length > 0) {
+          <button
+            mat-stroked-button
+            [matMenuTriggerFor]="menu"
+            aria-label="More actions"
+          >
+            More
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            @for (action of menuActions; track action.label) {
+              <button
+                mat-menu-item
+                [disabled]="action.disabled"
+                (click)="action.action()"
+              >
+                <mat-icon>{{ action.icon }}</mat-icon>
+                {{ action.label }}
+              </button>
+            }
+          </mat-menu>
+        }
+
+        @for (action of headerActions; track action.label) {
+          <button
+            mat-flat-button
+            [color]="action.color || 'primary'"
+            class="add-button"
+            (click)="action.action()"
+          >
+            @if (action.icon) {
+              <mat-icon>{{ action.icon }}</mat-icon>
+            }
+            {{ action.label }}
+          </button>
+        }
+      }
+    </div>
+  </div>
+</div>
