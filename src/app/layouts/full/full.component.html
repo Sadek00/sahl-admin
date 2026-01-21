@@ -1,5 +1,6 @@
 <!-- <app-topstrip></app-topstrip> -->
-<mat-sidenav-container class="mainWrapper blue_theme" [class.light-theme]="!isDarkTheme()" [class.dark-theme]="isDarkTheme()" autosize autoFocus dir="ltr">
+<mat-sidenav-container class="mainWrapper blue_theme" [class.light-theme]="!isDarkTheme()"
+  [class.dark-theme]="isDarkTheme()" autosize autoFocus dir="ltr">
   <!-- ============================================================== -->
   <!-- Vertical Sidebar -->
   <!-- ============================================================== -->
@@ -17,7 +18,7 @@
       </ng-scrollbar>
     </div>
   </mat-sidenav>
-  
+
   <!-- ============================================================== -->
   <!-- Main Content -->
   <!-- ============================================================== -->
@@ -25,18 +26,23 @@
     <!-- ============================================================== -->
     <!-- VerticalHeader -->
     <!-- ============================================================== -->
-    
+
     <app-header [showToggle]="!isOver" (toggleMobileNav)="sidenav.toggle()"></app-header>
-    
-    <main class="maxWidth">
+
+    <main class="maxWidth bg-slate-50">
       <!-- ============================================================== -->
       <!-- Outlet -->
       <!-- ============================================================== -->
       <router-outlet></router-outlet>
     </main>
 
-    <div class="footer">
-     <a class="text-decoration-none" href="" target="_blank">Sahl</a>&nbsp;&copy; 2025
+    <div class="footer d-flex justify-content-between bg-slate-50">
+      <a class="text-decoration-none" href="" target="_blank">© {{year}} Sahl. All rights reserved.</a>
+      <div class="d-flex align-items-center gap-4">
+        <span>Version 1.0.0</span>
+        <div class="icon-10 bg-green-500 rounded-full"></div>
+        <span class="f-s-12">All Systems Operational</span>
+      </div>
     </div>
   </mat-sidenav-content>
 

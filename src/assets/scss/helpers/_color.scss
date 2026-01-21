@@ -13,7 +13,8 @@
   }
 }
 
-@include syntax-colors($primary: var(--mat-sys-primary),
+@include syntax-colors(
+  $primary: var(--mat-sys-primary),
   $secondary: var(--mat-sys-secondary),
   $success: $success,
   $warning: $warning,
@@ -27,7 +28,9 @@
   $light-warning: $light-warning,
   $light-primary: var(--mat-sys-primary-fixed-dim),
   $warning-black: $warning-black,
-  );
+  $slate-50: $slate-50,
+  $green-500: #22c55e
+);
 
 .fill-warning svg {
   fill: $warning;

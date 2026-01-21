@@ -118,4 +118,6 @@ export class FullComponent implements OnInit {
     return this.themeService.isDarkTheme();
   }
 
+  year: string = new Date().getFullYear().toString();
+
 }

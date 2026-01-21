@@ -1,7 +1,7 @@
 <mat-toolbar class="topbar">
 
   <!-- Mobile Menu -->
-  
+
   <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex justify-content-center">
     <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
   </button>
@@ -10,15 +10,20 @@
     <button mat-menu-item>Item 2</button>
   </mat-menu>
 
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" placeholder="Search..." aria-label="Search" />
+    <button type="button">
+      🔍
+    </button>
+  </div>
+
 
   <span class="flex-1-auto"></span>
-  
-  <button mat-mini-fab 
-    aria-label="theme" 
-    (click)="toggleTheme()" 
-    class="m-r-5 icon-35"
+
+  <button mat-mini-fab aria-label="theme" (click)="toggleTheme()" class="m-r-5 icon-35"
     [ngClass]="isDarkTheme() ? 'bg-dark text-primary' : 'bg-light-warning text-warning-black'">
-    <i-tabler class="d-flex" [name]="isDarkTheme() ? 'moon' : 'sun'"></i-tabler>
+    <i-tabler class="d-flex" [name]="isDarkTheme() ? 'moon' : 'sun-low'"></i-tabler>
   </button>
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Notifications" class="m-r-5">
     <i-tabler class="d-flex" name="bell" matBadge="1" matBadgeColor="primary"></i-tabler>
