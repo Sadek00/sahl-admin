@@ -17,7 +17,7 @@ $utilities: (
     class: min-w,
     values: (
       0: 0,
-      px: 1px,
+      1: 1px,
       auto: auto,
       full: 100%,
     ),
@@ -27,7 +27,7 @@ $utilities: (
     class: max-w,
     values: (
       0: 0,
-      px: 1px,
+      1: 1px,
       auto: auto,
       full: 100%,
       screen: 100vw,
@@ -38,7 +38,7 @@ $utilities: (
     class: min-h,
     values: (
       0: 0,
-      px: 1px,
+      1: 1px,
       auto: auto,
       full: 100%,
       screen: 100vh,
@@ -49,7 +49,7 @@ $utilities: (
     class: max-h,
     values: (
       0: 0,
-      px: 1px,
+      1: 1px,
       auto: auto,
       full: 100%,
       screen: 100vh,

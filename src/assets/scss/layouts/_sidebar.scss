@@ -109,6 +109,13 @@
   width: 70px
 }
 
+.sidebarNav-mini .mat-mdc-nav-list{
+  width: 65px;
+}
+.sidebarNav-mini .sidebarNav:hover .mat-mdc-nav-list{
+  width: 250px;
+}
+
 .sidebarNav-mini .sidebarNav .profile-bar {
   display: none
 }
@@ -122,8 +129,12 @@
 }
 
 .sidebarNav-mini .sidebarNav .sidebar-list .menu-list-item .mdc-list-item__start {
-  margin-left: 6px!important;
+  margin-left: 4px!important;
   margin-right: 8px!important
+}
+
+.sidebarNav-mini .sidebar-list.mdc-list .mdc-list-group__subheader {
+  margin-left: 4px!important;
 }
 
 .sidebarNav-mini .sidebarNav:hover {
@@ -152,7 +163,7 @@
 }
 
 .sidebarNav-mini .sidebarNav:hover .sidebar-list.mdc-list .mdc-list-group__subheader {
-  text-align: left
+  text-align: left;
 }
 
 .sidebarNav-mini .hideMenu {
@@ -169,16 +180,12 @@
   padding: 0 12px
 }
 
-.sidebarNav-mini .sidebar-list.mdc-list .mdc-list-group__subheader {
-  text-align: center
-}
-
 .sidebarNav-mini .contentWrapper {
   transition: swift-ease-out(width)
 }
 
 @media (min-width: 1024px) {
   .sidebarNav-mini .contentWrapper {
-      margin-left:80px!important
-  }
+      margin-left:70px!important;
+  } 
 }

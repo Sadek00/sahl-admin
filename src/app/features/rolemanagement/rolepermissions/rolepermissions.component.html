@@ -36,17 +36,11 @@
         </div>
     </div>
 </div> -->
-<page-header
-  [title]="'Roles Permission'"
-  [icon]="'shield'"
-  [breadcrumbs]="[
+<page-header [title]="'Roles Permission'" [icon]="'shield'" [breadcrumbs]="[
     { label: 'Home', url: '/' },
     { label: 'Roles', url: '/roles' },
     { label: 'Permissions', active: true },
-  ]"
-  [sticky]="true"
-  [headerActions]="headerActions"
->
+  ]" [sticky]="true" [headerActions]="headerActions">
 </page-header>
 
 <!-- Content Section -->
@@ -82,23 +76,13 @@
             </div>
             <!-- Move Select All Section to header right -->
             <div class="select-all-section header-select-all">
-              <mat-checkbox
-                [checked]="allSelected()"
-                [indeterminate]="someSelected() && !allSelected()"
-                (change)="toggleSelectAll()"
-                color="primary"
-                class="select-all-checkbox"
-              >
+              <mat-checkbox [checked]="allSelected()" [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()" color="primary" class="select-all-checkbox">
                 <span class="select-all-label">Select All</span>
               </mat-checkbox>
             </div>
-            <button
-              mat-icon-button
-              class="expand-button"
-              (click)="toggleExpanded()"
-              [class.expanded]="isExpanded()"
-              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-            >
+            <button mat-icon-button class="expand-button" (click)="toggleExpanded()" [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}">
               <mat-icon>expand_more</mat-icon>
             </button>
           </div>
@@ -117,35 +101,24 @@
             <!-- Permissions List -->
             <div class="permissions-list two-columns">
               @for (permission of permissions(); track permission.key) {
-                <div
-                  class="permission-item"
-                  [class.selected]="permission.selected"
-                  (click)="togglePermission(permission.key)"
-                >
-                  <mat-checkbox
-                    [checked]="permission.selected"
-                    color="primary"
-                    class="permission-checkbox"
-                    (click)="$event.stopPropagation()"
-                    (change)="togglePermission(permission.key)"
-                  >
-                  </mat-checkbox>
-                  <div
-                    class="permission-icon-container"
-                    [class.selected]="permission.selected"
-                  >
-                    <mat-icon class="permission-icon">{{
-                      permission.icon
+              <div class="permission-item" [class.selected]="permission.selected"
+                (click)="togglePermission(permission.key)">
+                <mat-checkbox [checked]="permission.selected" color="primary" class="permission-checkbox"
+                  (click)="$event.stopPropagation()" (change)="togglePermission(permission.key)">
+                </mat-checkbox>
+                <div class="permission-icon-container" [class.selected]="permission.selected">
+                  <mat-icon class="permission-icon">{{
+                    permission.icon
                     }}</mat-icon>
-                  </div>
+                </div>
 
-                  <div class="permission-details">
-                    <div class="permission-header">
-                      <h4 class="permission-title">{{ permission.label }}</h4>
-                      @if (permission.selected) {}
-                    </div>
+                <div class="permission-details">
+                  <div class="permission-header">
+                    <h4 class="permission-title">{{ permission.label }}</h4>
+                    @if (permission.selected) {}
                   </div>
                 </div>
+              </div>
               }
             </div>
           </mat-card-content>
@@ -168,23 +141,13 @@
             </div>
             <!-- Move Select All Section to header right -->
             <div class="select-all-section header-select-all">
-              <mat-checkbox
-                [checked]="allSelected()"
-                [indeterminate]="someSelected() && !allSelected()"
-                (change)="toggleSelectAll()"
-                color="primary"
-                class="select-all-checkbox"
-              >
+              <mat-checkbox [checked]="allSelected()" [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()" color="primary" class="select-all-checkbox">
                 <span class="select-all-label">Select All</span>
               </mat-checkbox>
             </div>
-            <button
-              mat-icon-button
-              class="expand-button"
-              (click)="toggleExpanded()"
-              [class.expanded]="isExpanded()"
-              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-            >
+            <button mat-icon-button class="expand-button" (click)="toggleExpanded()" [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}">
               <mat-icon>expand_more</mat-icon>
             </button>
           </div>
@@ -295,23 +258,13 @@
             </div>
             <!-- Move Select All Section to header right -->
             <div class="select-all-section header-select-all">
-              <mat-checkbox
-                [checked]="allSelected()"
-                [indeterminate]="someSelected() && !allSelected()"
-                (change)="toggleSelectAll()"
-                color="primary"
-                class="select-all-checkbox"
-              >
+              <mat-checkbox [checked]="allSelected()" [indeterminate]="someSelected() && !allSelected()"
+                (change)="toggleSelectAll()" color="primary" class="select-all-checkbox">
                 <span class="select-all-label">Select All</span>
               </mat-checkbox>
             </div>
-            <button
-              mat-icon-button
-              class="expand-button"
-              (click)="toggleExpanded()"
-              [class.expanded]="isExpanded()"
-              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}"
-            >
+            <button mat-icon-button class="expand-button" (click)="toggleExpanded()" [class.expanded]="isExpanded()"
+              matTooltip="{{ isExpanded() ? 'Collapse' : 'Expand' }}">
               <mat-icon>expand_more</mat-icon>
             </button>
           </div>
