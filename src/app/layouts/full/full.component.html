@@ -1,13 +1,13 @@
 <!-- <app-topstrip></app-topstrip> -->
-<mat-sidenav-container class="mainWrapper blue_theme" [class.light-theme]="!isDarkTheme()"
-  [class.dark-theme]="isDarkTheme()" autosize autoFocus dir="ltr">
+<mat-sidenav-container class="mainWrapper blue_theme" [class.sidebarNav-mini]="sidebarMini"
+  [class.light-theme]="!isDarkTheme()" [class.dark-theme]="isDarkTheme()" autosize autoFocus dir="ltr">
   <!-- ============================================================== -->
   <!-- Vertical Sidebar -->
   <!-- ============================================================== -->
   <mat-sidenav #leftsidenav [mode]="isOver ? 'over' : 'side'" [opened]="!isOver"
     (openedChange)="onSidenavOpenedChange($event)" (closedStart)="onSidenavClosedStart()" class="sidebarNav">
     <div class="flex-layout">
-      <app-sidebar (toggleMobileNav)="sidenav.toggle()" [showToggle]="isOver"></app-sidebar>
+      <app-sidebar (toggleMobileNav)="toggleMenu()" [showToggle]="isOver"></app-sidebar>
       <ng-scrollbar class="position-relative" style="height: 100%">
         <mat-nav-list class="sidebar-list">
           @for(item of navItems; track item) {
@@ -15,10 +15,6 @@
           </app-nav-item>
           }
         </mat-nav-list>
-        <div class="footer d-flex justify-content-between bg-slate-50">
-          <span class="f-s-12">Collapse</span>
-          <i-tabler name="arrow-bar-to-left" class="icon-20 cursor-pointer" (click)="toggleSidebarMini()"></i-tabler>
-        </div>
       </ng-scrollbar>
     </div>
   </mat-sidenav>
@@ -41,7 +37,14 @@
     </main>
 
     <div class="footer d-flex justify-content-between bg-slate-50">
+      <!-- <div class="d-flex align-items-center gap-4">
+        <i-tabler name="arrow-bar-to-left" class="icon-20 cursor-pointer m-l-12"
+          (click)="toggleSidebarMini()"></i-tabler>
+        <span>Sidebar Mini</span>
+      </div> -->
+
       <a class="text-decoration-none" href="" target="_blank">© {{year}} Sahl. All rights reserved.</a>
+
       <div class="d-flex align-items-center gap-4">
         <span>Version 1.0.0</span>
         <div class="icon-10 bg-green-500 rounded-full"></div>

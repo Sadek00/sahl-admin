@@ -113,6 +113,14 @@ export class FullComponent implements OnInit {
     this.options.sidenavOpened = isOpened;
     //this.settings.setOptions(this.options);
   }
+  toggleMenu() {
+    this.sidenav.toggle();
+  }
+
+  sidebarMini = false;
+  toggleSidebarMini() {
+    this.sidebarMini = !this.sidebarMini;
+  }
 
   isDarkTheme(): boolean {
     return this.themeService.isDarkTheme();
