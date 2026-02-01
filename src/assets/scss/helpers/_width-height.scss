@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "variables";
+
+$utilities: (
+  "width": (
+    property: width,
+    class: w,
+    values: variables.$widths,
+  ),
+  "height": (
+    property: height,
+    class: h,
+    values: variables.$heights,
+  ),
+  "min-width": (
+    property: min-width,
+    class: min-w,
+    values: (
+      0: 0,
+      1: 1px,
+      auto: auto,
+      full: 100%,
+    ),
+  ),
+  "max-width": (
+    property: max-width,
+    class: max-w,
+    values: (
+      0: 0,
+      1: 1px,
+      auto: auto,
+      full: 100%,
+      screen: 100vw,
+    ),
+  ),
+  "min-height": (
+    property: min-height,
+    class: min-h,
+    values: (
+      0: 0,
+      1: 1px,
+      auto: auto,
+      full: 100%,
+      screen: 100vh,
+    ),
+  ),
+  "max-height": (
+    property: max-height,
+    class: max-h,
+    values: (
+      0: 0,
+      1: 1px,
+      auto: auto,
+      full: 100%,
+      screen: 100vh,
+    ),
+  ),
+);

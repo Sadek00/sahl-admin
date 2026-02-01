@@ -92,3 +92,21 @@ $sizes: (
   full: 100%,
   auto: auto,
 ) !default;
+
+$widths: map-merge(
+  (
+    auto: auto,
+    px: 1px,
+    0: 0,
+  ),
+  $sizes
+) !default;
+
+$heights: map-merge(
+  (
+    auto: auto,
+    px: 1px,
+    0: 0,
+  ),
+  $sizes
+) !default;

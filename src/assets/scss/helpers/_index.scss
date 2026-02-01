@@ -10,6 +10,7 @@
 @use "text";
 @use "spacing";
 @use "rounded";
+@use "width-height";
 
 $utilities: functions.map-collect(variables.$utilities,
     display.$utilities,
@@ -17,7 +18,8 @@ $utilities: functions.map-collect(variables.$utilities,
     spacing.$utilities,
     border.$utilities,
     rounded.$utilities,
-    text.$utilities);
+    text.$utilities,
+    width-height.$utilities);
 
 @each $key, $utility in $utilities {
   $values: map.get($utility, values);

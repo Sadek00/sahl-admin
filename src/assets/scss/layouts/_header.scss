@@ -33,3 +33,47 @@ html .topbar {
   width: 35px !important;
   height: 35px !important;
 }
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 4px 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  background-color: var(--bg-slate-50);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background-color: var(--mat-toolbar-container-background-color);
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #64748b;
+    padding: 3px;
+
+    &:hover {
+      color: #3b82f6;
+    }
+  }
+}

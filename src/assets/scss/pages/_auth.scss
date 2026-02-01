@@ -87,6 +87,8 @@
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
+  border-width: 1px !important;
+  border-color: var(--border-color) !important;
 }
 
 .max-width-form {
@@ -106,4 +108,8 @@
   position: absolute;
   top: -19px;
   right: 3px;
+}
+
+.p-lg {
+  padding: 32px !important;
 }
