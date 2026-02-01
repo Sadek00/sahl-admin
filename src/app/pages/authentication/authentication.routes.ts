@@ -6,7 +6,7 @@ import { ModernLoginComponent } from './modern-login/modern-login.component';
 
 export const AuthenticationRoutes: Routes = [
   {
-    path: '',
+    path: '',  
     children: [
       {
         path: 'login',
@@ -16,6 +16,10 @@ export const AuthenticationRoutes: Routes = [
         path: 'register',
         component: AppSideRegisterComponent,
       },
+      {
+        path: '',
+        component: AppSideLoginComponent,
+      }
     ],
   },
 ];
