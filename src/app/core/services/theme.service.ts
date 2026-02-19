@@ -20,7 +20,11 @@ export class ThemeService {
 
   private setTheme(theme: string): void {
     localStorage.setItem('theme', theme);
-    document.documentElement.className = theme + '-theme';
+    //document.documentElement.className = theme + '-theme';
+    
+    const html = document.documentElement;
+    html.classList.remove('light-theme', 'dark-theme');
+    html.classList.add(`${theme}-theme`);
   }
 
   isDarkTheme(): boolean {
