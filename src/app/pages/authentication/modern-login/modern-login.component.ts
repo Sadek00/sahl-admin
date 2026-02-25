@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './modern-login.component.scss'
 })
 export class ModernLoginComponent {
+  hidePassword = true;
+
   constructor( 
     private themeService: ThemeService
   ) {}
@@ -21,8 +23,20 @@ export class ModernLoginComponent {
     this.themeService.toggleTheme();
   }
 
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
+  }
+
   isDarkTheme(): boolean {
     return this.themeService.isDarkTheme();
   }
+
+
+  backgroundImage(): string {
+    return this.isDarkTheme() 
+      ? '/assets/images/backgrounds/boy-with-key-dark.png'
+      : '/assets/images/backgrounds/boy-with-key.png';
+  }
+
 
 }

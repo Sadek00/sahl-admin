@@ -3,6 +3,7 @@ import { CoreService } from 'src/app/core/services/core.service';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
   selector: 'app-blank',
@@ -15,8 +16,15 @@ export class BlankComponent {
 
   options = this.settings.getOptions();
 
-  constructor(private settings: CoreService) {
+  constructor(
+    private settings: CoreService,
+    private themeService: ThemeService
+  ) {
     this.htmlElement = document.querySelector('html')!;
+  }
+
+  isDarkTheme(): boolean {
+    return this.themeService.isDarkTheme();
   }
 
 

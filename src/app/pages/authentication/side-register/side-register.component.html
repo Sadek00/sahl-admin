@@ -1,34 +1,29 @@
-<div class="blank-layout-container justify-content-center align-items-center bg-light">
-  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+<header class="header">
+  <a class="logo">
+    <img src="assets/images/logos/logoSahl.png" alt="logo" class="logo-icon" />
+    <span>Sahl</span>
+  </a>
+  <div class="d-flex gap-4">
+    <button mat-mini-fab aria-label="theme" (click)="toggleTheme()" class="m-r-5 icon-35"
+            [ngClass]="isDarkTheme() ? 'bg-dark text-primary' : 'bg-light-warning text-warning-black'">
+            <i-tabler class="d-flex" [name]="isDarkTheme() ? 'moon' : 'sun-low'"></i-tabler>
+        </button>
+    <button mat-mini-fab aria-label="help" class="m-r-5 icon-35">
+      <i-tabler class="d-flex" name="help-circle"></i-tabler>
+    </button>
+  </div>
+</header>
+<div class="blank-layout-container justify-content-center align-items-center bg-slate-50">
+  <div class="position-relative row w-100 h-100 justify-content-center">
     <div class="col-lg-4 d-flex align-items-center">
       <mat-card class="cardWithShadow boxed-auth">
         <mat-card-content class="p-32">
           <div class="text-center">
-            <a [routerLink]="['/dashboard']">
+            <!-- <a [routerLink]="['/dashboard']">
               <img src="./assets/images/logos/dark-logo.svg" class="align-middle m-2" alt="logo" />
-            </a>
+            </a> -->
+            <h4 class="f-s-24 f-w-600 m-t-16">Create new account</h4>
           </div>
-
-          <div class="row m-t-24 custom-row">
-            <div class="col-12 col-sm-6">
-              <button mat-stroked-button class="w-100">
-                <div class="d-flex align-items-center">
-                  <img src="/assets/images/svgs/google-icon.svg" alt="google" width="16" class="m-r-8" />
-                  Sign in with Google
-                </div>
-              </button>
-            </div>
-            <div class="col-12 col-sm-6">
-              <button mat-stroked-button class="w-100 d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <img src="/assets/images/svgs/facebook-icon.svg" alt="facebook" width="40" class="m-r-4" />
-                  Sign in with FB
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <div class="or-border m-t-30">or sign up with</div>
 
           <form class="m-t-30">
             <mat-label class="f-s-14 f-w-600 m-b-12 d-block">Name</mat-label>
@@ -42,7 +37,10 @@
             <!-- password -->
             <mat-label class="f-s-14 f-w-600 m-b-12 d-block">Password</mat-label>
             <mat-form-field appearance="outline" class="w-100" color="primary">
-              <input matInput type="password" />
+              <input matInput [type]="hidePassword ? 'password' : 'text'" />
+              <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                <i-tabler [name]="hidePassword ? 'eye-off' : 'eye'"></i-tabler>
+              </button>
             </mat-form-field>
 
             <a [routerLink]="['/']" mat-flat-button color="primary" class="w-100">
@@ -50,6 +48,30 @@
             </a>
             <!-- input -->
           </form>
+
+          <div class="or-border m-t-30">or sign in with</div>
+
+          <div class="row m-t-24 custom-row">
+            <div class="col-12 col-sm-6">
+              <button mat-stroked-button class="w-100">
+                <div class="d-flex align-items-center">
+                  <img src="/assets/images/svgs/google-icon.svg" alt="google" width="16" class="m-r-8" />
+                  <span>
+                    Sign in with Google
+                  </span>
+                </div>
+              </button>
+            </div>
+            <div class="col-12 col-sm-6">
+              <button mat-stroked-button class="w-100 d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <img src="/assets/images/svgs/facebook-icon.svg" alt="facebook" width="40" class="m-r-4" />
+                  Sign in with FB
+                </div>
+              </button>
+            </div>
+          </div>
+
           <span class="d-block f-w-500 text-center m-t-24">Already have an Account?
 
             <a [routerLink]="['/authentication/login']" class="text-decoration-none text-primary f-w-500 f-s-14">

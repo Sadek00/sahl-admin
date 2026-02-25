@@ -3,12 +3,13 @@
     <img src="assets/images/logos/logoSahl.png" alt="logo" class="logo-icon" />
     <span>Sahl</span>
   </a>
-  <div>
-    <button mat-mini-fab aria-label="theme">
-      <i-tabler class="d-flex"></i-tabler>
+  <div class="d-flex gap-4">
+    <button mat-mini-fab aria-label="theme" (click)="toggleTheme()" class="m-r-5 icon-35"
+        [ngClass]="isDarkTheme() ? 'bg-dark text-primary' : 'bg-light-warning text-warning-black'">
+        <i-tabler class="d-flex" [name]="isDarkTheme() ? 'moon' : 'sun-low'"></i-tabler>
     </button>
-    <button mat-icon-button aria-label="Notifications" class="m-r-5">
-      <i-tabler class="d-flex" name="bell" matBadge="1" matBadgeColor="primary"></i-tabler>
+    <button mat-mini-fab aria-label="help" class="m-r-5 icon-35">
+      <i-tabler class="d-flex" name="help-circle"></i-tabler>
     </button>
   </div>
 </header>
@@ -32,7 +33,10 @@
             <!-- password -->
             <mat-label class="f-s-14 f-w-600 m-b-12 d-block">Password</mat-label>
             <mat-form-field appearance="outline" class="w-100" color="primary">
-              <input matInput type="password" />
+              <input matInput [type]="hidePassword ? 'password' : 'text'" />
+              <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                <i-tabler [name]="hidePassword ? 'eye-off' : 'eye'"></i-tabler>
+              </button>
             </mat-form-field>
 
             <div class="d-flex align-items-center m-b-12">
