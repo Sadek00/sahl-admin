@@ -4,8 +4,8 @@
 .header {
   top: 60px;
   z-index: 9;
-  height: 75px;
-  padding: 13px 24px;
+  height: 70px;
+  padding: 15px 24px;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 
@@ -22,8 +22,8 @@
     }
 
     .page-icon {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 41px;
       background: var(--primary-linear-gradient);
       border-radius: 12px;
       display: flex;
@@ -43,11 +43,11 @@
       display: flex;
       flex-direction: column;
       margin-right: auto;
-      gap: 7px;
+      gap: 2px;
 
       h2 {
         margin: 0;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         color: #1a1a1a;
         background: var(--primary-linear-gradient);
@@ -60,7 +60,6 @@
     .header-actions {
       display: flex;
       gap: 12px;
-      margin-top: 8px;
 
       .add-button {
         box-shadow: 0 1px 2px rgba(99, 102, 241, 0.08);
@@ -76,8 +75,8 @@
   .breadcrumbs {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
+    gap: 5px;
+    font-size: 11px;
     opacity: 0.93;
     margin: 0;
   }
@@ -86,7 +85,7 @@
     color: #6b7280;
     text-decoration: none;
     transition: color 0.2s ease;
-    padding: 1px 6px;
+    padding: 0px 6px;
     border-radius: 6px;
     font-weight: 500;
 
